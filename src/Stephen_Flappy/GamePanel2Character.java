@@ -281,9 +281,7 @@ public class GamePanel2Character extends JPanel implements ActionListener, KeyLi
         g.setColor(Color.white);
         g.setFont(new Font("Pixel Sans Serif", Font.PLAIN, 32));
         if (gameOver) {
-        	g.setColor(new Color(217, 37, 49));
             g.drawString("Game Over", 270, 250);
-            g.setColor(Color.WHITE);
             g.drawString("Score: " + String.valueOf((int) score), frameWidth / 2 - 115, frameHeight / 2);
             playAgainButton.setVisible(true);
         } else {

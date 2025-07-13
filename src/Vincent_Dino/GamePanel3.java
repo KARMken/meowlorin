@@ -37,7 +37,6 @@ public class GamePanel3 extends JPanel implements KeyListener {
     	
     	// Game Over label
         gameOverLabel = new JLabel("Game Over!");
-        gameOverLabel.setForeground(new Color(217, 37, 49));
         gameOverLabel.setFont(mp.arcade.deriveFont(Font.BOLD, 24f));
         gameOverLabel.setHorizontalAlignment(SwingConstants.CENTER);
         gameOverLabel.setBounds(240, 100, 300, 50);
@@ -58,7 +57,6 @@ public class GamePanel3 extends JPanel implements KeyListener {
         back1Button.addActionListener(e -> mp.showScreen("LOADING3")); // Switch LoadingScreen
         add(back1Button);
         
-        back1Button.setVisible(false);
         setOpaque(false);
         setLayout(null);
         setFocusable(true); // Ensure the panel can receive focus
@@ -331,6 +329,7 @@ public class GamePanel3 extends JPanel implements KeyListener {
 
             if (collisionChecker.isGameOver()) {
                 ((Timer) e.getSource()).stop(); // Stop the timer
+                JOptionPane.showMessageDialog(this, "Game Over! Score: " + score, "Game Over", JOptionPane.INFORMATION_MESSAGE);
                 restartButton.setVisible(true); // Show the restart button
             }
         });

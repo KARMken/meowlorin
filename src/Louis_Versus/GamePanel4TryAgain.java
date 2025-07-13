@@ -3,8 +3,6 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Image;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.io.InputStream;
@@ -53,14 +51,12 @@ public class GamePanel4TryAgain extends JPanel {
         win.setOpaque(false); 
         win.setBounds(190, 100, 400, 200);
         
-        JButton backButton = new JButton(new ImageIcon(loadImage("/gp4/start_button.png")));
-        backButton.setIcon(resizeImages("/gp4/start_button.png", 250, 125));
+        JButton backButton = new JButton(new ImageIcon(loadImage("/gp4/back_button.png")));
         backButton.setBorderPainted(false);
         backButton.setContentAreaFilled(false);
         backButton.setFocusPainted(false);
         backButton.setOpaque(false); 
-        backButton.setBounds(270, 300, 250, 125); // Set position and size
-        addHoverEffect(backButton, 270, 300, 250, 125, 270, 145, "/gp4/start_button.png");
+        backButton.setBounds(315, 450, 150, 75); // Set position and size
         backButton.addActionListener(e -> {
             mp.showScreen("LOADING4");
             loadingScreen.resetGame(gp4); // Reset the game on the loading screen
@@ -93,29 +89,4 @@ public class GamePanel4TryAgain extends JPanel {
             return null;
         }
     }
-    public void addHoverEffect(JButton button, int x, int y, int normalWidth, int normalHeight, int hoverWidth, int hoverHeight, String imagePath) {
-        button.addMouseListener(new MouseAdapter() {
-            @Override
-            public void mouseEntered(MouseEvent e) {
-                button.setBounds(x - (hoverWidth - normalWidth) / 2, y - (hoverHeight - normalHeight) / 2, hoverWidth, hoverHeight);
-                button.setIcon(resizeImages(imagePath, hoverWidth, hoverHeight));
-                button.repaint();
-            }
-
-            @Override
-            public void mouseExited(MouseEvent e) {
-                button.setBounds(x, y, normalWidth, normalHeight);
-                button.setIcon(resizeImages(imagePath, normalWidth, normalHeight));
-                button.repaint();
-            }
-        });
-    }
-
-    // Method to resize ImageIcon
-    public ImageIcon resizeImages(String imagePath, int width, int height) {
-        ImageIcon icon = new ImageIcon(getClass().getResource(imagePath));
-        Image image = icon.getImage().getScaledInstance(width, height, Image.SCALE_SMOOTH);
-        return new ImageIcon(image);
-    	}
-
-    }
+}

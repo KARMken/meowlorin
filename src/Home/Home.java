@@ -1,5 +1,5 @@
 package Home;
-  
+
 import javax.swing.JFrame;
 
 public class Home extends HomePanel {

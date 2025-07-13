@@ -201,6 +201,8 @@ public class GamePanel1_Card extends JPanel {
     private static void checkMatch(MainPanel mp, GamePanel1 gamePanel1, LoadingScreen1 ld1) {
         if (firstFlippedCard != null && secondFlippedCard != null &&
                 firstFlippedCard.description.equals(secondFlippedCard.description)) {
+            // Cards match, perform match actions (e.g., remove them from play)
+            mp.playSE(2);
             gamePanel1.handleMatchedCards(mp, ld1);     
 
             new Thread(() -> {
@@ -213,7 +215,6 @@ public class GamePanel1_Card extends JPanel {
                         if (unmatched == 0) {
                             // All cards matched, generate new cards
                             gamePanel1.resetNewGame(mp, ld1);
-                            mp.playSE(8);
                         }
 
                         // Update score in GamePanel1

@@ -42,7 +42,7 @@ public class LoadingScreen3 extends JPanel {
         
         
         // Load background image
-        ImageIcon img1 = new ImageIcon(getClass().getResource("/LoadingScreen1.png"));
+        ImageIcon img1 = new ImageIcon(getClass().getResource("/LoadingScreen.png"));
         backgroundImage = img1.getImage();
     }
 

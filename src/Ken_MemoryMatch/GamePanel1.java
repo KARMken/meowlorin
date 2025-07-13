@@ -263,13 +263,9 @@ public class GamePanel1 extends JPanel {
             if (!card.isEffectApplied() && card.isFlipped()) {
                 applyCardEffect(card);
                 if (card.getEffectType().equals("powerup")) {
-                	mp.playSE(2);
                     updateEffect("" + card.getEffectValue(), 350, 520, new Color(0, 255, 0));
                 } else if (card.getEffectType().equals("powerdown")) {
-                	mp.playSE(7);
                     updateEffect("" + card.getEffectValue(), 350, 520, new Color(255, 0, 0));
-                }else if (card.getEffectType().equals("none")) {
-                	mp.playSE(5);
                 }
                 // Mark the card as having its effect applied
                 card.setEffectApplied(true);

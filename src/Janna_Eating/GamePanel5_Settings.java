@@ -7,6 +7,7 @@ import java.awt.*;
 import java.awt.event.*;
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
 import java.net.URL;
 import java.util.Random;
 
@@ -46,7 +47,7 @@ public class GamePanel5_Settings extends JPanel {
         gameOverLabel = new JLabel("Game Over!");
         gameOverLabel.setFont(mp.arcade.deriveFont(Font.BOLD, 34));
         gameOverLabel.setHorizontalAlignment(SwingConstants.CENTER);
-        gameOverLabel.setForeground(Color.red);
+        gameOverLabel.setForeground(new Color(191, 210, 130));
         gameOverLabel.setBounds(240, 100, 300, 50);
         gameOverLabel.setVisible(false);
         add(gameOverLabel);
@@ -84,6 +85,28 @@ public class GamePanel5_Settings extends JPanel {
         // Load background image
         URL urlBg = GamePanel5_Settings.class.getResource("/bgg.png");
         backgroundImage = new ImageIcon(urlBg).getImage().getScaledInstance(800, 600, Image.SCALE_SMOOTH);
+        
+        //Font
+        try {
+        	InputStream is = getClass().getResourceAsStream("/Fonts/ka1.ttf");
+
+        	if (is != null) {
+        	    lblFont = Font.createFont(Font.TRUETYPE_FONT, is).deriveFont(16f);
+        	    lblFont2 = lblFont.deriveFont(36f);
+        	} else {
+        	    System.err.println("Font not found!");
+        	}
+            
+            GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
+            ge.registerFont(lblFont);
+            ge.registerFont(lblFont2);
+            
+        } catch (FontFormatException | IOException e) {
+            e.printStackTrace();
+            lblFont = new Font("Arial", Font.BOLD, 16);
+            lblFont2 = new Font("Arial", Font.BOLD, 36);
+        }
+
 
         // Score Label
         scoreLabel = new JLabel("Score: 0");

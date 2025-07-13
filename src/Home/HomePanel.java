@@ -55,7 +55,7 @@ public class HomePanel extends JPanel {
     private void drawButtons(MainPanel mp) {
         String[][] buttonsAtt = {
             {"/HomePage/purrfectpair_title.png", "30", "132", "238", "50"},
-            {"/HomePage/flappykitty_title.png", "30", "197", "238", "50"},
+            {"/HomePage/flappykitten_title.png", "30", "197", "238", "50"},
             {"/HomePage/purrfectleap_title.png", "30", "262", "238", "50"},
             {"/HomePage/fur-ociusshowdown_title.png", "30", "327", "238", "50"},
             {"/HomePage/catchthefood_title.png", "30", "392", "238", "50"}
@@ -85,13 +85,13 @@ public class HomePanel extends JPanel {
                     gifPath = "/HomePage/hellicater.gif";
                     break;
                 case 2:
-                    gifPath = "/HomePage/takbo.gif";
+                    gifPath = "/HomePage/catrun.gif";
                     break;
                 case 3:
-                    gifPath = "/HomePage/kamuting.gif";
+                    gifPath = "/HomePage/cathy.gif";
                     break;
                 case 4:
-                    gifPath = "/HomePage/kain.gif"; 
+                    gifPath = "/HomePage/eatingcat.gif"; 
                     break;
                 default:
                     gifPath = "/HomePage/immunity.gif";
@@ -239,12 +239,11 @@ class AboutGameFrame extends JFrame {
     private int currentSlide = 0;
     private JPanel slidePanel;
     private String[] slides = {
-        "/HomePage/AboutGame",
-        "/HomePage/PurrfectFair",
-        "/HomePage/FlappyKitty",
-        "/HomePage/PurrfectLeap",
-        "/HomePage/Furrciusshowdown",
-        "/HomePage/catchthefood"
+        "/HomePage/about_game",
+        "/HomePage/about_game1",
+        "/HomePage/about_game2",
+        "/HomePage/about_game4",
+        "/HomePage/about_game5"
     };
 
     private JFrame homeFrame;

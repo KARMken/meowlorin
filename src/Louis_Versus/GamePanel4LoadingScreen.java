@@ -123,4 +123,4 @@ public class GamePanel4LoadingScreen extends JPanel {
 		
 	}
 
-}
+ }

@@ -30,7 +30,7 @@ public class GamePanel5_Food extends JPanel {
         // URLs for objects
         foodIcons[6] = new ImageIcon(GamePanel5_Food.class.getResource("/ball.png"));
         foodIcons[7] = new ImageIcon(GamePanel5_Food.class.getResource("/can.png"));
-        foodIcons[8] = new ImageIcon(GamePanel5_Food.class.getResource("/Choco.png"));
+        foodIcons[8] = new ImageIcon(GamePanel5_Food.class.getResource("/choco.png"));
         foodIcons[9] = new ImageIcon(GamePanel5_Food.class.getResource("/grapes.png"));
         foodIcons[10] = new ImageIcon(GamePanel5_Food.class.getResource("/mug.png"));
         foodIcons[11] = new ImageIcon(GamePanel5_Food.class.getResource("/spicey.png"));

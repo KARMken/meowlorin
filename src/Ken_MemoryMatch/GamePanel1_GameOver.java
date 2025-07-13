@@ -45,7 +45,7 @@ public class GamePanel1_GameOver extends JPanel {
     private void setButton(MainPanel mp, GamePanel1 gp1) {
         // Create button and set icon
         JButton playButton = new JButton();
-        playButton.setIcon(gp1.resizeImage("/start_button.png", 200, 100));
+        playButton.setIcon(gp1.resizeImage("/gp1/play.png", 200, 100));
         playButton.setBounds(300, 300, 200, 100);
 
         // Remove default button border
@@ -53,7 +53,7 @@ public class GamePanel1_GameOver extends JPanel {
         playButton.setContentAreaFilled(false);
         playButton.setOpaque(false);
 
-        gp1.addHoverEffect(playButton, 300, 300, 200, 100, 220, 120, "/start_button.png");
+        gp1.addHoverEffect(playButton, 300, 300, 200, 100, 220, 120, "/gp1/play.png");
         playButton.addActionListener(e -> {
         	gp1.resetScore();
             gp1.startTimer();
